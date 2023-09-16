@@ -1,0 +1,34 @@
+/*-- scss:functions --*/
+
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+/*-- fonts --*/
+
+@font-face {
+  font-family:  Noto Serif;
+  src: url("fonts/notoserif-variable.woff2");
+  font-style: normal;
+}
+
+/*-- rules --*/
+
+h1.title {
+  font-family: Noto Serif, Serif;
+  font-weight: 500;
+  font-size: 70px;
+ }
+ 
+ h1 {
+  font-family: Noto Serif, Serif;
+  font-weight: 400;
+  font-size: 50px; 
+ }
+ 
+ h2 {
+  font-family: Noto Serif, Serif;
+  font-weight: 400;
+  font-size: 30px;
+ }
+ 
