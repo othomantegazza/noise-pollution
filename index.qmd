@@ -18,6 +18,7 @@ editor_options:
 library(dplyr)
 library(readr)
 library(purrr)
+library(ggplot2)
 library(lubridate)
 library(here)
 library(janitor)
@@ -63,14 +64,35 @@ noise <-
     recursive = F
   ) %>% 
   map(read_noise)
-
-
-noise[2]  %>% read_noise()
-
-
-read_noise(
-  'data/Audio Amplitude 2023-09-10 19-07-08/'
-)
 ```
 
+# View Data
+
+```{r}
+#| message: false
+#| warning: false
+#| column: screen
+#| out-width: 100%
+#| fig-width: 15
+p <- 
+  ggplot() +
+  aes(x = timestamp,
+      y = sound_pressure_level_d_b,
+      group = pause_group)
+
+for(noise_record in noise) {
+  p <- 
+    p +
+    geom_line(
+      data = noise_record,
+      alpha = .2
+    ) +
+    geom_smooth(
+      data = noise_record,
+      colour = '#22756d'
+    )
+}
+
+p 
+```
 
