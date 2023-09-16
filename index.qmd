@@ -1,14 +1,19 @@
 ---
-title: "Start Your Quarto Project Here"
-author: "Yourself"
+title: "Inquinamento Acustico in Acquabella"
+subtitle: "Un esperimento di citizen science di quartiere."
+author: 
+  - Otho Mantegazza
+  - Caterina Ricci
 date: today
 editor_options: 
   chunk_output_type: console
 ---
 
-# My Analysis
+# Intro
+
+# Data
 
 ```{r}
-print("Hello There!")
+
 ```
 
