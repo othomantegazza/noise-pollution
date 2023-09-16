@@ -87,12 +87,15 @@ for(noise_record in noise) {
       data = noise_record,
       alpha = .2
     ) +
-    geom_smooth(
-      data = noise_record,
-      colour = '#22756d'
+    stat_smooth(
+      data = noise_record, 
+      method = "loess",
+      colour = '#22756d',
+      n = 1000,
+      span = .1
     )
 }
 
-p 
+p
 ```
 
