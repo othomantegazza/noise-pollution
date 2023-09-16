@@ -1,8 +1,10 @@
 # Content
 
-A Quarto project starter for the workshop in [Data Visualization for Scientists](https://github.com/othomantegazza/dataviz-for-scientists-slides/).
+Code to explore environmental noise data collected with Phyphox.
 
 # Deploy Locally
+
+!You need the data though, that at this moment are kept private!
 
 To deploy locally:
 
