@@ -15,13 +15,23 @@ editor_options:
 
 ```{r}
 #| warning: false
-library(tidyverse)
+library(dplyr)
+library(readr)
+library(purrr)
+library(lubridate)
 library(here)
 library(janitor)
 ```
 
 ```{r}
-list.files('R', full.names = T) %>% 
+data_folder <- 'data'
+function_folder <- 'R'
+
+# source all functions
+list.files(
+  function_folder,
+  full.names = T
+) %>% 
   walk(source)
 ```
 
@@ -29,6 +39,17 @@ list.files('R', full.names = T) %>%
 # Data
 
 ```{r}
+noise <- 
+  list.dirs(
+    data_folder,
+    recursive = F
+  ) %>% 
+  map(read_noise)
+
+
+noise[2]  %>% read_noise()
+
+
 read_noise(
   'data/Audio Amplitude 2023-09-10 19-07-08/'
 )
