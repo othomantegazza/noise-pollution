@@ -11,9 +11,27 @@ editor_options:
 
 # Intro
 
+# Setup
+
+```{r}
+#| warning: false
+library(tidyverse)
+library(here)
+library(janitor)
+```
+
+```{r}
+list.files('R', full.names = T) %>% 
+  walk(source)
+```
+
+
 # Data
 
 ```{r}
-
+read_noise(
+  'data/Audio Amplitude 2023-09-10 19-07-08/'
+)
 ```
+
 
