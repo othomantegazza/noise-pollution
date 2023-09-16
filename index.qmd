@@ -27,6 +27,22 @@ library(janitor)
 data_folder <- 'data'
 function_folder <- 'R'
 
+theme_base <- 
+    theme(
+    plot.margin = margin(10,5,5,5),
+    axis.ticks = element_line(),
+    axis.line = element_line(),
+    legend.position = "top",
+    legend.box = "vertical"
+  )
+
+a <- theme_set(
+  theme_minimal(
+    base_size = 15,
+  ) +
+    theme_base
+)
+
 # source all functions
 list.files(
   function_folder,
@@ -36,9 +52,11 @@ list.files(
 ```
 
 
-# Data
+# Read Data
 
 ```{r}
+#| message: false
+#| warning: false
 noise <- 
   list.dirs(
     data_folder,
