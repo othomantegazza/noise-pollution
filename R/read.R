@@ -17,7 +17,11 @@ read_noise <- function(folder_path,
   noise_data <- 
     folder_path %>% 
     here('Amplitudes.csv') %>%
-    read_csv() %>% 
+    read_csv(
+      col_types = cols(
+        'Sound pressure level (dB)' = col_number()
+      )
+    ) %>% 
     clean_names() %>% 
     transmute(
       exp_time = time_s,
