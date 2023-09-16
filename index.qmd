@@ -15,7 +15,7 @@ editor_options:
 
 ```{r}
 #| warning: false
-library(dplyr)
+library(dplyr, warn.conflicts = FALSE)
 library(readr)
 library(purrr)
 library(ggplot2)
