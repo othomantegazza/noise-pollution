@@ -20,10 +20,11 @@ h1.title {
   font-size: 70px;
  }
  
- h1 {
+ h1, h1 .header-section-number {
   font-family: Noto Serif, Serif;
   font-weight: 400;
   font-size: 50px; 
+  color: black;
  }
  
  h2 {
