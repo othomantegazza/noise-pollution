@@ -10,6 +10,7 @@ project:
     - fonts/
     - js/
     - style/
+    - R/
   
 format:
   html:

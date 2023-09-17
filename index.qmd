@@ -66,6 +66,15 @@ noise <-
   map(read_noise)
 ```
 
+# Smooth
+
+```{r}
+noise <- 
+  noise %>% 
+  map(smooth_noise)
+```
+
+
 # View Data
 
 ```{r}
@@ -78,7 +87,10 @@ p <-
   ggplot() +
   aes(x = timestamp,
       y = sound_pressure_level_d_b,
-      group = pause_group)
+      group = pause_group) +
+  labs(title = 'Sound Pollution',
+       x = 'Time [hh:mm]',
+       y = 'Intensity of Sound Pollutiin [dB???]',)
 
 for(noise_record in noise) {
   p <- 
@@ -87,12 +99,17 @@ for(noise_record in noise) {
       data = noise_record,
       alpha = .2
     ) +
-    stat_smooth(
-      data = noise_record, 
-      method = "loess",
-      colour = '#22756d',
-      n = 1000,
-      span = .1
+    # stat_smooth(
+    #   data = noise_record, 
+    #   method = "loess",
+    #   colour = '#22756d',
+    #   n = 1000,
+    #   span = .1
+    # )
+    geom_line(
+      data = noise_record,
+      mapping = aes(y = smoothed_sound_db),
+      colour = '#22756d'
     )
 }
 
